@@ -1,7 +1,7 @@
 
 ---
 
-## Enunciado do Moodle
+## Assignment
 
 The aim of this assignment is to build NLP classifiers for a specific text classification task. For that, you may
 explore any of the techniques that we are exploring during the course, including **pre-processing**, **feature extraction**, and
