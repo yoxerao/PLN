@@ -1,0 +1,1 @@
+model.safetensors (475MB) available [here](https://drive.google.com/file/d/1-1aMmc4OPUAnt5LrNhVXNXmPaG7lG5gu/view?usp=sharing)
