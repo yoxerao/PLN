@@ -1,0 +1,1 @@
+model.safetensors available [here](https://drive.google.com/drive/folders/16xrb3weMCoVjIeYTphxG4f0O1YDfw9tG?usp=sharing)

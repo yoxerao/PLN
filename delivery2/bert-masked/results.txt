@@ -1,0 +1,45 @@
+Epoch	Training Loss	Validation Loss
+1	8.553200	7.382441
+2	7.388600	6.964059
+3	7.067900	7.064729
+4	6.953200	7.336967
+5	6.725600	6.478099
+6	6.597400	6.841054
+7	6.718300	6.896241
+8	6.494800	6.944494
+
+
+
+
+Isto tá ligeiramente diferente, mas o de cima foi o usado/mais recente, já não me lembro que mudei de um para o outro
+Acho que tinha começado a treinar com um parâmetro mal e recomecei ou coisa assim...
+Epoch	Training Loss	Validation Loss
+1	6.651900	7.152285
+2	6.612100	6.724494
+3	6.668500	6.988876
+4	6.714200	7.277037
+5	6.551700	6.395914
+6	6.445700	6.799526
+7	6.554700	6.851403
+8	6.332700	6.873106
+
+
+Perplexity = e^loss (acredita joca)
+
+isto é de outra experiência, nem sei se faz muito sentido, pelo menos o treino tá calculado de forma diferente
+>>> Epoch 1: Training Perplexity: 2.986756470610013
+>>> Epoch 1: Perplexity: 5757.872270503603
+>>> Epoch 2: Training Perplexity: 1.200444909798428
+>>> Epoch 2: Perplexity: 9617.136533742818
+>>> Epoch 3: Training Perplexity: 1.0199029438831653
+>>> Epoch 3: Perplexity: 16341.08798152887
+>>> Epoch 4: Training Perplexity: 1.0067358342588546
+>>> Epoch 4: Perplexity: 17758.76702998593
+>>> Epoch 5: Training Perplexity: 1.0053568747573958
+>>> Epoch 5: Perplexity: 17708.217168085026
+>>> Epoch 6: Training Perplexity: 1.004400961258344
+>>> Epoch 6: Perplexity: 17981.506884930313
+>>> Epoch 7: Training Perplexity: 1.003960506806678
+>>> Epoch 7: Perplexity: 18130.783457093687
+>>> Epoch 8: Training Perplexity: 1.0032851437835628
+>>> Epoch 8: Perplexity: 18210.35720817867
