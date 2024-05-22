@@ -14,13 +14,24 @@ old_data ="""Epoch	Training Loss	Validation Loss	Accuracy	F1	Precision	Recall
 8	0.161600	0.207165	0.930345	0.931593	0.938069	0.930345
 """
 
-data = """Epoch	Training Loss	Validation Loss	Accuracy	F1	Precision	Recall
-1	0.449700	0.166591	0.949611	0.950469	0.954403	0.949611
-2	0.160000	0.107827	0.952390	0.952897	0.956051	0.952390
-3	0.131700	0.113743	0.955169	0.955906	0.959301	0.955169
-4	0.101000	0.129865	0.952019	0.952877	0.956753	0.952019
-5	0.097900	0.119263	0.957577	0.958380	0.961923	0.957577
-6	0.092200	0.114707	0.957947	0.958662	0.961988	0.957947
+# data = """Epoch	Training Loss	Validation Loss	Accuracy	F1	Precision	Recall
+# 1	0.449700	0.166591	0.949611	0.950469	0.954403	0.949611
+# 2	0.160000	0.107827	0.952390	0.952897	0.956051	0.952390
+# 3	0.131700	0.113743	0.955169	0.955906	0.959301	0.955169
+# 4	0.101000	0.129865	0.952019	0.952877	0.956753	0.952019
+# 5	0.097900	0.119263	0.957577	0.958380	0.961923	0.957577
+# 6	0.092200	0.114707	0.957947	0.958662	0.961988	0.957947
+# """
+
+data = """Epoch	Training Loss	Validation Loss
+1	7.751300	7.137944
+2	7.000600	7.044827
+3	6.845000	6.594419
+4	6.696100	6.694266
+5	6.643300	6.694021
+6	6.538800	6.579125
+7	6.438000	6.578517
+8	6.437300	6.363343
 """
 
 # plot the training and validation loss
@@ -33,55 +44,24 @@ precision = []
 recall = []
 
 for line in data.strip().split('\n')[1:]:
-    epoch, training, validation, acc, f, p, r = line.split()
+    epoch, training, validation = line.split()
     epochs.append(int(epoch))
     training_loss.append(float(training))
     validation_loss.append(float(validation))
-    accuracy.append(float(acc))
-    f1.append(float(f))
-    precision.append(float(p))
-    recall.append(float(r))
+    print(epoch, training, validation)
+    # accuracy.append(float(acc))
+    # f1.append(float(f))
+    # precision.append(float(p))
+    # recall.append(float(r))
 
 plt.figure(figsize=(10, 5))
+plt.ylim(bottom=0, top=7.8)
 plt.plot(epochs, training_loss, label='Training Loss', color='red')
 plt.plot(epochs, validation_loss, label='Validation Loss', color='blue')
 plt.legend()
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.title('Training and Validation Loss')
-# plt.show()
-
-# plot the f1, precision and recall
-plt.figure(figsize=(10, 5))
-plt.plot(epochs, f1, label='F1', color='green')
-plt.plot(epochs, precision, label='Precision', color='blue')
-plt.plot(epochs, recall, label='Recall', color='red')
-plt.legend()
-plt.xlabel('Epoch')
-plt.ylabel('Score')
-plt.title('F1, Precision and Recall')
-# plt.show()
-
-
-folder_path = './logs'
-learning_rates = []
-epochs = []
-
-for file in os.listdir(folder_path):
-    with open(os.path.join(folder_path, file), 'r') as f:
-        log_history = json.load(f)['log_history']
-
-        for entry in log_history:
-            if 'learning_rate' in entry:
-                learning_rates.append(entry['learning_rate'])
-                epochs.append(entry['epoch'])
-
-plt.figure(figsize=(10, 5))
-plt.plot(epochs, learning_rates, label='Learning Rate', color='blue')
-plt.legend()
-plt.xlabel('Epoch')
-plt.ylabel('Learning Rate')
-plt.title('Learning Rate')
 plt.show()
 
 

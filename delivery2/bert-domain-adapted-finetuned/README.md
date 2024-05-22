@@ -1,2 +1,1 @@
-não gravou..., morreu perto do fim
-model.safetensors available [not yet]()
+model.safetensors available [here](https://drive.google.com/file/d/1-1bTi4wZ9hRC8fv6awvz6aH2YYhLJjob/view?usp=sharing)
