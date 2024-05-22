@@ -1,3 +1,15 @@
+este é o mais recente
+Epoch	Training Loss	Validation Loss
+1	7.751300	7.137944
+2	7.000600	7.044827
+3	6.845000	6.594419
+4	6.696100	6.694266
+5	6.643300	6.694021
+6	6.538800	6.579125
+7	6.438000	6.578517
+8	6.437300	6.363343
+
+
 Epoch	Training Loss	Validation Loss
 1	8.553200	7.382441
 2	7.388600	6.964059
@@ -7,8 +19,6 @@ Epoch	Training Loss	Validation Loss
 6	6.597400	6.841054
 7	6.718300	6.896241
 8	6.494800	6.944494
-
-
 
 
 Isto tá ligeiramente diferente, mas o de cima foi o usado/mais recente, já não me lembro que mudei de um para o outro
