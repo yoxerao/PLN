@@ -1,1 +1,2 @@
-model.safetensors available [here](https://drive.google.com/drive/folders/1-NwbIMgQhh0sITnf5LQJzUBw1yZSdXud?usp=sharing)
+não gravou..., morreu perto do fim
+model.safetensors available [not yet]()
