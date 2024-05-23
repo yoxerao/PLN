@@ -1,16 +1,16 @@
 import os
-
 import matplotlib.pyplot as plt
 import json
 
-#parou aqui e não gravou :(
 data = """Epoch	Training Loss	Validation Loss	Accuracy	F1	Precision	Recall
-1	0.492100	0.302145	0.898481	0.899887	0.908306	0.898481
-2	0.284100	0.225925	0.912560	0.913835	0.920596	0.912560
-3	0.225200	0.197282	0.921823	0.922810	0.928592	0.921823
-4	0.153800	0.200277	0.927566	0.928696	0.934510	0.927566
-5	0.136700	0.224338	0.930159	0.931254	0.937546	0.930159
-6	0.118500	0.212462	0.934420	0.935457	0.940635	0.934420
+1	1.269000	0.562304	0.774361	0.766643	0.810507	0.774361
+2	0.440600	0.287722	0.902001	0.903461	0.912398	0.902001
+3	0.277900	0.237038	0.908670	0.910416	0.919590	0.908670
+4	0.188400	0.282705	0.915339	0.916925	0.925723	0.915339
+5	0.169300	0.231759	0.918674	0.920026	0.926668	0.918674
+6	0.152000	0.226495	0.921267	0.922394	0.928852	0.921267
+7	0.117900	0.229088	0.924787	0.926034	0.932369	0.924787
+8	0.112800    0.231639	0.925157	0.926313	0.932034	0.925157
 """
 # plot the training and validation loss
 epochs = []
@@ -32,16 +32,20 @@ for line in data.strip().split('\n')[1:]:
     recall.append(float(r))
 
 plt.figure(figsize=(10, 5))
+# start y axis on 0
+plt.ylim(bottom=0, top=1.26)
 plt.plot(epochs, training_loss, label='Training Loss', color='red')
 plt.plot(epochs, validation_loss, label='Validation Loss', color='blue')
 plt.legend()
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.title('Training and Validation Loss')
+
 # plt.show()
 
 # plot the f1, precision and recall
 plt.figure(figsize=(10, 5))
+plt.ylim(bottom=0.6)
 plt.plot(epochs, f1, label='F1', color='green')
 plt.plot(epochs, precision, label='Precision', color='blue')
 plt.plot(epochs, recall, label='Recall', color='red')
@@ -51,26 +55,6 @@ plt.ylabel('Score')
 plt.title('F1, Precision and Recall')
 # plt.show()
 
-
-folder_path = './logs'
-learning_rates = []
-epochs = []
-
-for file in os.listdir(folder_path):
-    with open(os.path.join(folder_path, file), 'r') as f:
-        log_history = json.load(f)['log_history']
-
-        for entry in log_history:
-            if 'learning_rate' in entry:
-                learning_rates.append(entry['learning_rate'])
-                epochs.append(entry['epoch'])
-
-plt.figure(figsize=(10, 5))
-plt.plot(epochs, learning_rates, label='Learning Rate', color='blue')
-plt.legend()
-plt.xlabel('Epoch')
-plt.ylabel('Learning Rate')
-plt.title('Learning Rate')
 plt.show()
 
 
